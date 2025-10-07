@@ -23,7 +23,7 @@ simple-banking-app/
 │   │   │   └── com
 │   │   │       └── bank
 │   │   │           └── simple_banking_app
-│   │   │               ├── App.java
+│   │   │               ├── BankingApp.java
 │   │   │               ├── exception
 │   │   │               │   ├── AccountNotFoundException.java
 │   │   │               │   ├── DuplicateAccountException.java
