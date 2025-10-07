@@ -14,7 +14,7 @@ public class AccountService {
 
 	public void createAccount(Account acc) throws DuplicateAccountException {
 		if (repo.exists(acc.getAccountNumber())) {
-			throw new DuplicateAccountException("Acc already exists: " + acc.getAccountNumber());
+			throw new DuplicateAccountException("Account already exists: " + acc.getAccountNumber());
 		}
 		int current = repo.countByCustomer(acc.getCustomerId());
 		if (current >= 2) {
@@ -28,12 +28,12 @@ public class AccountService {
 
 	public Account getAccount(String accNo) throws AccountNotFoundException {
 		Account a = repo.find(accNo);
-		if (a == null) throw new AccountNotFoundException("Acc not found: " + accNo);
+		if (a == null) throw new AccountNotFoundException("Account not found: " + accNo);
 		return a;
 	}
 
 	public void deleteAccount(String accNo) throws AccountNotFoundException {
-		if (!repo.exists(accNo)) throw new AccountNotFoundException("Acc not found: " + accNo);
+		if (!repo.exists(accNo)) throw new AccountNotFoundException("Account not found: " + accNo);
 		repo.delete(accNo);
 	}
 
