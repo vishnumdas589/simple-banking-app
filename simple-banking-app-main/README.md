@@ -22,7 +22,6 @@ simple-banking-app/
 │   │   ├── java
 │   │   │   └── com
 │   │   │       └── bank
-│   │   │           └── simple_banking_app
 │   │   │               ├── BankingApp.java
 │   │   │               ├── exception
 │   │   │               │   ├── AccountNotFoundException.java
@@ -45,7 +44,6 @@ simple-banking-app/
 │       └── java
 │           └── com
 │               └── bank
-│                   └── simple_banking_app
 │                       ├── repository
 │                       │   └── AccountRepositoryTest.java
 │                       └── service
