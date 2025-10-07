@@ -35,7 +35,7 @@ public class App {
 	}
 
 	private void menu() {
-		System.out.println("\n=== Simple Banking ===");
+		System.out.println("\n=== Simple Banking Application ===");
 		System.out.println("1) Create Customer");
 		System.out.println("2) Create Account");
 		System.out.println("3) Deposit");
@@ -45,7 +45,7 @@ public class App {
 		System.out.println("7) Delete Account");
 		System.out.println("8) View Customer");
 		System.out.println("9) Exit");
-		System.out.print("Choose: ");
+		System.out.print("Choose an option: ");
 	}
 
 	public void start() {
@@ -63,10 +63,10 @@ public class App {
 				case "7": deleteAccount(); break;
 				case "8": viewCustomer(); break;
 				case "9":
-					out("Thanks for visiting Simple Banking!");
+					out("Thanks for visiting Simple Banking");
 					return;
 				default:
-					out("Invalid choice.");
+					out("Invalid choice !");
 				}
 			} catch (Exception e) {
 				err(e.getMessage());
