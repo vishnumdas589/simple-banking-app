@@ -139,9 +139,5 @@ Main App
 BankingApp
   ↳ CLI Menu → Calls appropriate services
 
-**System Flow Diagram (CLI Workflow)**
+<img width="418" height="658" alt="image" src="https://github.com/user-attachments/assets/fd4a8131-2649-4dbf-8d8a-1bbf3f3cb14a" />
 
-             <img width="526" height="690" alt="image" src="https://github.com/user-attachments/assets/b2db48c5-104d-497b-bd41-0e3afc0cb992" />
-
-..
-......
