@@ -137,40 +137,8 @@ Exception handling for invalid inputs and insufficient funds
 
 Account validation and statement generation
 
-**UML Class Diagram (High-Level)**
-                  +----------------------+
-                  |      Customer        |
-                  +----------------------+
-                  | - customerId : int   |
-                  | - name : String      |
-                  | - email : String     |
-                  | - phone : String     |
-                  +----------------------+
-                              |
-                              | 1
-                              | 
-                              | *
-                  +----------------------+
-                  |       Account        |
-                  +----------------------+
-                  | - accountId : int    |
-                  | - type : String      |
-                  | - balance : double   |
-                  | - customer : Customer|
-                  +----------------------+
-                              |
-                              | 1
-                              | 
-                              | *
-                  +----------------------+
-                  |     Transaction      |
-                  +----------------------+
-                  | - txnId : int        |
-                  | - fromAccount : int  |
-                  | - toAccount : int    |
-                  | - amount : double    |
-                  | - timestamp : Date   |
-                  +----------------------+
+<img width="294" height="543" alt="image" src="https://github.com/user-attachments/assets/6e500f33-61a6-47b2-923c-5e123135c8a3" />
+
 
 Repositories Layer
 ------------------
