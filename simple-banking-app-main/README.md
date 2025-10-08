@@ -17,7 +17,11 @@ Bank Statements – Generate transaction statements within a date range
 Automated Testing – Comprehensive TestNG test coverage
 
 **Project Structure**
+
+
+
 <img width="554" height="714" alt="image" src="https://github.com/user-attachments/assets/6be4f695-be5a-40c3-8ac5-8bd9820997cf" />
+
 
 **Requirements**
 
@@ -136,5 +140,7 @@ BankingApp
   ↳ CLI Menu → Calls appropriate services
 
 **System Flow Diagram (CLI Workflow)**
+
+
              <img width="526" height="690" alt="image" src="https://github.com/user-attachments/assets/b2db48c5-104d-497b-bd41-0e3afc0cb992" />
 
