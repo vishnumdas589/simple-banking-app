@@ -17,38 +17,7 @@ Bank Statements – Generate transaction statements within a date range
 Automated Testing – Comprehensive TestNG test coverage
 
 **Project Structure**
-simple-banking-app/
-├── pom.xml
-├── README.md
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com/bank/
-│   │   │       ├── BankingApp.java
-│   │   │       ├── exception/
-│   │   │       │   ├── AccountNotFoundException.java
-│   │   │       │   ├── DuplicateAccountException.java
-│   │   │       │   ├── InsufficientFundsException.java
-│   │   │       │   └── InvalidAmountException.java
-│   │   │       ├── model/
-│   │   │       │   ├── Account.java
-│   │   │       │   ├── Customer.java
-│   │   │       │   └── Transaction.java
-│   │   │       ├── repository/
-│   │   │       │   ├── AccountRepository.java
-│   │   │       │   └── TransactionRepository.java
-│   │   │       └── service/
-│   │   │           ├── AccountService.java
-│   │   │           ├── BankStatementService.java
-│   │   │           ├── CustomerService.java
-│   │   │           └── TransactionService.java
-│   └── test
-│       └── java/com/bank/
-│           ├── repository/AccountRepositoryTest.java
-│           └── service/
-│               ├── AccountServiceTest.java
-│               ├── BankStatementServiceTest.java
-│               └── TransactionServiceTest.java
+<img width="554" height="714" alt="image" src="https://github.com/user-attachments/assets/6be4f695-be5a-40c3-8ac5-8bd9820997cf" />
 
 **Requirements**
 
@@ -166,35 +135,6 @@ Main App
 BankingApp
   ↳ CLI Menu → Calls appropriate services
 
-🔄 System Flow Diagram (CLI Workflow)
-                ┌────────────────────────┐
-                │       User (CLI)       │
-                └────────────┬───────────┘
-                             │
-                             ▼
-                ┌────────────────────────┐
-                │      BankingApp        │
-                │ (Handles Menu Input)   │
-                └────────────┬───────────┘
-                             │
-                ┌────────────┼────────────┐
-                ▼             ▼            ▼
-     ┌────────────────┐  ┌──────────────┐  ┌─────────────────┐
-     │CustomerService │  │AccountService│  │TransactionService│
-     └────────────────┘  └──────────────┘  └─────────────────┘
-             │                  │                   │
-             ▼                  ▼                   ▼
-     ┌────────────────┐  ┌──────────────┐  ┌─────────────────┐
-     │ Customer Model │  │ Account Model│  │ Transaction Model│
-     └────────────────┘  └──────────────┘  └─────────────────┘
-             │                  │                   │
-             ▼                  ▼                   ▼
-     ┌────────────────┐  ┌──────────────┐  ┌─────────────────┐
-     │ Customer Repo  │  │ Account Repo │  │ Transaction Repo │
-     └────────────────┘  └──────────────┘  └─────────────────┘
-                             │
-                             ▼
-                ┌────────────────────────┐
-                │   BankStatementService │
-                │  (Generates Statement) │
-                └────────────────────────┘
+**System Flow Diagram (CLI Workflow)**
+             <img width="526" height="690" alt="image" src="https://github.com/user-attachments/assets/b2db48c5-104d-497b-bd41-0e3afc0cb992" />
+
