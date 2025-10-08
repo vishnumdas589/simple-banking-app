@@ -139,5 +139,6 @@ Main App
 BankingApp
   ↳ CLI Menu → Calls appropriate services
 
-<img width="418" height="658" alt="image" src="https://github.com/user-attachments/assets/fd4a8131-2649-4dbf-8d8a-1bbf3f3cb14a" />
+<img width="442" height="622" alt="image" src="https://github.com/user-attachments/assets/ab94988b-3234-4b18-8b36-308042d22884" />
+
 
