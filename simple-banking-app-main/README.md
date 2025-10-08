@@ -1,73 +1,76 @@
+Simple Banking Application (CLI)
 
-# Simple Banking Application (CLI)
+A lightweight Command-Line Banking System built using Java and Maven, designed to simulate real-world banking operations such as account management, transactions, and statements — all within the terminal.
 
-This project is a simple banking system made using **Java** and **Maven**.  
-It runs in the **command line** and allows you to:
+It also includes a full TestNG test suite to validate business logic and ensure application reliability.
 
-- Create customers  
-- Create accounts (Savings / Checking)  
-- Deposit money  
-- Withdraw money  
-- Transfer money between accounts  
-- View account statements  
+🚀 **Features**
 
-It also has a complete **TestNG test suite** to check that everything works correctly.
+Customer Management – Create and view customers
 
-Project Structure
+Account Management – Open Savings and Checking accounts
+
+Transactions – Deposit, Withdraw, and Transfer funds
+
+Bank Statements – Generate transaction statements within a date range
+
+Automated Testing – Comprehensive TestNG test coverage
+
+**Project Structure**
 simple-banking-app/
 ├── pom.xml
 ├── README.md
 ├── src
 │   ├── main
 │   │   ├── java
-│   │   │   └── com
-│   │   │       └── bank
-│   │   │               ├── BankingApp.java
-│   │   │               ├── exception
-│   │   │               │   ├── AccountNotFoundException.java
-│   │   │               │   ├── DuplicateAccountException.java
-│   │   │               │   ├── InsufficientFundsException.java
-│   │   │               │   └── InvalidAmountException.java
-│   │   │               ├── model
-│   │   │               │   ├── Account.java
-│   │   │               │   ├── Customer.java
-│   │   │               │   └── Transaction.java
-│   │   │               ├── repository
-│   │   │               │   ├── AccountRepository.java
-│   │   │               │   └── TransactionRepository.java
-│   │   │               └── service
-│   │   │                   ├── AccountService.java
-│   │   │                   ├── BankStatementService.java
-│   │   │                   ├── CustomerService.java
-│   │   │                   └── TransactionService.java
+│   │   │   └── com/bank/
+│   │   │       ├── BankingApp.java
+│   │   │       ├── exception/
+│   │   │       │   ├── AccountNotFoundException.java
+│   │   │       │   ├── DuplicateAccountException.java
+│   │   │       │   ├── InsufficientFundsException.java
+│   │   │       │   └── InvalidAmountException.java
+│   │   │       ├── model/
+│   │   │       │   ├── Account.java
+│   │   │       │   ├── Customer.java
+│   │   │       │   └── Transaction.java
+│   │   │       ├── repository/
+│   │   │       │   ├── AccountRepository.java
+│   │   │       │   └── TransactionRepository.java
+│   │   │       └── service/
+│   │   │           ├── AccountService.java
+│   │   │           ├── BankStatementService.java
+│   │   │           ├── CustomerService.java
+│   │   │           └── TransactionService.java
 │   └── test
-│       └── java
-│           └── com
-│               └── bank
-│                       ├── repository
-│                       │   └── AccountRepositoryTest.java
-│                       └── service
-│                           ├── AccountServiceTest.java
-│                           ├── BankStatementServiceTest.java
-│                           └── TransactionServiceTest.java
+│       └── java/com/bank/
+│           ├── repository/AccountRepositoryTest.java
+│           └── service/
+│               ├── AccountServiceTest.java
+│               ├── BankStatementServiceTest.java
+│               └── TransactionServiceTest.java
+
+**Requirements**
+
+Java 17 or higher
+
+Maven 3.9 or higher
+
+To verify your setup:
+
+java -version
+mvn -version
+
+**Running the Application**
+
+Open the terminal in the project folder.
+
+Run the following command:
+
+mvn exec:java
 
 
-
-
-## Requirements
-
-- Java 17 or later  
-- Maven 3.9 or later  
-
-To check if they are installed, run these commands in terminal:  
-`java -version`  
-`mvn -version`
-
-## How to Run the Application
-
-1. Open a terminal in the project folder  
-2. Run: `mvn exec:java`  
-3. You will see a menu like this:
+**A menu will appear:**
 
 1) Create Customer  
 2) Create Account  
@@ -79,45 +82,151 @@ To check if they are installed, run these commands in terminal:
 8) View Customer  
 9) Exit  
 
-Type a number (1-9) and follow the instructions on the screen.
 
-## Example Usage
+**Select an option (1–9) and follow the on-screen prompts.**
 
-- First, choose option 1 to create a customer (enter ID, name, email, phone)  
-- Then choose option 2 to create an account (choose SAVINGS or CHECKING and set a starting amount)  
-- Use option 3 to deposit money  
-- Use option 4 to withdraw money  
-- Use option 5 to transfer money to another account  
-- Use option 6 to generate a statement (enter two dates in format `yyyy-MM-dd HH:mm:ss`)  
-- Choose option 9 to exit the program
+**Example Usage**
 
-## Business Rules
+Create a customer → enter ID, name, email, phone
 
-- Each customer can have at most **two accounts** (one SAVINGS + one CHECKING)  
-- Deposit, withdraw, and transfer amounts must be **greater than zero**  
-- Withdraw and transfer will fail if there is **not enough balance**  
-- Transfer to the **same account** is not allowed  
-- Statement dates must be entered manually and cannot be older than 6 months  
+Create an account → choose SAVINGS or CHECKING and a starting balance
 
-## How to Run Tests
+Deposit or withdraw money
 
-This project uses **TestNG** to test all features.
+Transfer between accounts
 
-- Run all tests:  
-`mvn test`
+Generate statements between two dates (yyyy-MM-dd HH:mm:ss)
 
-- Run only transaction tests:  
-`mvn test -Dgroups=transactions`
+Exit the program (option 9)
 
-- Run a specific test class:  
-`mvn -Dtest=TransactionServiceTest test`
+**Business Rules**
 
-## What the Tests Check
+One customer can hold up to two accounts (1 Savings + 1 Checking)
 
-- Deposit adds money correctly  
-- Withdraw subtracts money correctly  
-- Transfer updates both accounts together  
-- Exceptions are thrown for invalid amounts, insufficient balance, or wrong account numbers  
-- Balances remain correct after every operation  
-- Statement shows transactions correctly  
+Transaction amounts must be greater than zero
 
+Transfers between the same account are not allowed
+
+Insufficient balance triggers an exception
+
+Statement date range cannot exceed 6 months
+
+**Running Tests**
+
+Run all tests:
+
+mvn test
+
+
+Run only transaction-related tests:
+
+mvn test -Dgroups=transactions
+
+
+Run a specific test class:
+
+mvn -Dtest=TransactionServiceTest test
+
+**Test Coverage Highlights**
+
+Deposit, withdrawal, and transfer operations
+
+Balance accuracy after each operation
+
+Exception handling for invalid inputs and insufficient funds
+
+Account validation and statement generation
+
+**UML Class Diagram (High-Level)**
+                  +----------------------+
+                  |      Customer        |
+                  +----------------------+
+                  | - customerId : int   |
+                  | - name : String      |
+                  | - email : String     |
+                  | - phone : String     |
+                  +----------------------+
+                              |
+                              | 1
+                              | 
+                              | *
+                  +----------------------+
+                  |       Account        |
+                  +----------------------+
+                  | - accountId : int    |
+                  | - type : String      |
+                  | - balance : double   |
+                  | - customer : Customer|
+                  +----------------------+
+                              |
+                              | 1
+                              | 
+                              | *
+                  +----------------------+
+                  |     Transaction      |
+                  +----------------------+
+                  | - txnId : int        |
+                  | - fromAccount : int  |
+                  | - toAccount : int    |
+                  | - amount : double    |
+                  | - timestamp : Date   |
+                  +----------------------+
+
+Repositories Layer
+------------------
+AccountRepository
+  ↳ manages Account storage/retrieval
+TransactionRepository
+  ↳ manages Transaction records
+
+Service Layer
+-------------
+AccountService
+  ↳ deposit(), withdraw(), transfer()
+
+CustomerService
+  ↳ createCustomer(), viewCustomer()
+
+TransactionService
+  ↳ recordTransaction()
+
+BankStatementService
+  ↳ generateStatement(fromDate, toDate)
+
+Main App
+--------
+BankingApp
+  ↳ CLI Menu → Calls appropriate services
+
+🔄 System Flow Diagram (CLI Workflow)
+                ┌────────────────────────┐
+                │       User (CLI)       │
+                └────────────┬───────────┘
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │      BankingApp        │
+                │ (Handles Menu Input)   │
+                └────────────┬───────────┘
+                             │
+                ┌────────────┼────────────┐
+                ▼             ▼            ▼
+     ┌────────────────┐  ┌──────────────┐  ┌─────────────────┐
+     │CustomerService │  │AccountService│  │TransactionService│
+     └────────────────┘  └──────────────┘  └─────────────────┘
+             │                  │                   │
+             ▼                  ▼                   ▼
+     ┌────────────────┐  ┌──────────────┐  ┌─────────────────┐
+     │ Customer Model │  │ Account Model│  │ Transaction Model│
+     └────────────────┘  └──────────────┘  └─────────────────┘
+             │                  │                   │
+             ▼                  ▼                   ▼
+     ┌────────────────┐  ┌──────────────┐  ┌─────────────────┐
+     │ Customer Repo  │  │ Account Repo │  │ Transaction Repo │
+     └────────────────┘  └──────────────┘  └─────────────────┘
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │   BankStatementService │
+                │  (Generates Statement) │
+                └────────────────────────┘
